@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { getAll } from "../../services/seasonsFetchers";
 import { Season } from "../../components/seasons/season";
 import { Title } from "../../components/layout/title";
@@ -7,9 +8,14 @@ import { SimpleButton } from "../../components/layout/buttons";
 const Seasons = ({ seasons }) => {
   const [seasonYear, setSeasonYear] = useState(seasons[0].season);
 
-  const handleChange = e => {
-    setSeasonYear(e.target.value);
-  };
+  const router = useRouter();
+
+  useEffect(() => {
+    const year = router.query.year ? router.query.year : seasons[seasons.length - 1].season;
+    setSeasonYear(year);
+  }, [])
+
+  const handleChange = e => setSeasonYear(e.target.value);
 
   const handleClick = e => {
     switch (e) {
@@ -49,8 +55,8 @@ const Seasons = ({ seasons }) => {
 };
 
 export async function getStaticProps() {
-  const { data } = await getAll("seasons");
-  const seasons = data.MRData.SeasonTable.Seasons;
+  const { Seasons } = await getAll("seasons");
+  const seasons = Seasons;
 
   return {
     props: {

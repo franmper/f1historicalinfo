@@ -4,9 +4,7 @@ import { useRouter } from "next/router";
 export const Data = ({ title, text, url }) => {
   const router = useRouter();
 
-  const handleLink = url => {
-    router.push(url);
-  };
+  const handleLink = url => router.push(url);
 
   return (
     <div className="ml-2">

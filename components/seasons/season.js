@@ -38,24 +38,12 @@ export const Season = ({ year }) => {
                       text={`${race.date}, ${race.time}`}
                     />
                     <Data
-                      title={`Winner: `}
+                      title={`Pilot Winner: `}
                       text={`${race.Results[0].Driver?.givenName} ${race.Results[0].Driver?.familyName}`}
                     />
                     <Data
-                      title={`Team: `}
+                      title={`Team Winner: `}
                       text={`${race.Results[0].Constructor?.name}`}
-                    />
-                    <Data
-                      title={`Fatest Lap: `}
-                      text={race.Results[0].FastestLap?.Time.time}
-                    />
-                    <Data
-                      title={`Average Speed: `}
-                      text={
-                        (race.Results[0].FastestLap?.AverageSpeed.speed,
-                        " ",
-                        race.Results[0].FastestLap?.AverageSpeed.units)
-                      }
                     />
                   </div>
                   <div className="flex justify-end items-end">
