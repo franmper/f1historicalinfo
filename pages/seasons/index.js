@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getAll } from "../../services/fetchers";
+import { getAll } from "../../services/seasonsFetchers";
 import { Season } from "../../components/seasons/season";
 import { Title } from "../../components/layout/title";
 import { SimpleButton } from "../../components/layout/buttons";

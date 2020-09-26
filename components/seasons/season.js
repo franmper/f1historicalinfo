@@ -1,6 +1,6 @@
 import React from "react";
 import useSWR from "swr";
-import { getOneSeason } from "../../services/fetchers";
+import { getOneSeason } from "../../services/seasonsFetchers";
 import { Loading } from "../layout/loading";
 import { Error } from "../layout/error";
 import { Data } from "./data";
