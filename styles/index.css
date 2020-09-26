@@ -1,0 +1,19 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Write you own custom component styles here */
+.btn-f1 {
+  @apply bg-f1-red text-f1-white font-thin py-3 px-5 rounded-sm;
+}
+
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
