@@ -4,6 +4,7 @@ import { getOneSeason } from "../../services/seasonsFetchers";
 import { Loading } from "../layout/loading";
 import { Error } from "../layout/error";
 import { Data } from "./data";
+import { CircuitImage } from "../layout/circuitImage";
 
 export const Season = ({ year }) => {
   const { data, error } = useSWR(year, getOneSeason);
@@ -46,13 +47,12 @@ export const Season = ({ year }) => {
                       text={`${race.Results[0].Constructor?.name}`}
                     />
                   </div>
-                  <div className="flex justify-end items-end">
-                    <img
-                      className="h-24 w-24"
-                      src="/img/circuits/sample.png"
-                      alt="Circuit"
-                    />
-                  </div>
+                  <CircuitImage
+                    verticalPosition="end"
+                    width="24"
+                    heigth="24"
+                    url="/img/circuits/sample.png"
+                  />
                 </div>
               </div>
             );

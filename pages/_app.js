@@ -5,7 +5,6 @@ import { Layout } from "../components/layout/layout";
 import NProgress from 'nprogress'
 
 Router.events.on("routeChangeStart", url => {
-  console.log(`Loading: ${url}`);
   NProgress.start();
 });
 Router.events.on("routeChangeComplete", () => NProgress.done());
