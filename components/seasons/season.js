@@ -33,6 +33,7 @@ export const Season = ({ year }) => {
                     <Data
                       title={`Circuit: ${race.Circuit.circuitName}`}
                       text={`${race.Circuit.Location.locality}, ${race.Circuit.Location.country}`}
+                      url={`/circuits/${race.Circuit.circuitId}`}
                     />
                     <Data
                       title={`Date: `}
